@@ -1,0 +1,10 @@
+path = importdata('./path.txt');
+
+feature  = [];
+
+for i=1:length(path)
+ fprintf("%d : %d", i, length(path)  );
+ feature_tmp =  histHSV(path{i}) ;
+ feature = [feature;feature_tmp];
+end
+csvwrite('hsv.csv',feature);
